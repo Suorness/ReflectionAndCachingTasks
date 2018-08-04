@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionTask", "ReflectionTask\ReflectionTask.csproj", "{A1B6265D-0F65-4373-B964-42C6E1056945}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0BB56051-9279-41EF-90E0-521485D66E7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflactionTaskTests", "ReflactionTaskTests\ReflactionTaskTests.csproj", "{9AEC5FBF-3783-4F74-A6C5-02564F9DD684}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{A1B6265D-0F65-4373-B964-42C6E1056945}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1B6265D-0F65-4373-B964-42C6E1056945}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1B6265D-0F65-4373-B964-42C6E1056945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AEC5FBF-3783-4F74-A6C5-02564F9DD684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AEC5FBF-3783-4F74-A6C5-02564F9DD684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AEC5FBF-3783-4F74-A6C5-02564F9DD684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AEC5FBF-3783-4F74-A6C5-02564F9DD684}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9AEC5FBF-3783-4F74-A6C5-02564F9DD684} = {0BB56051-9279-41EF-90E0-521485D66E7E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C8F46F2E-FFD9-444B-BEE8-A71115FBC31B}
