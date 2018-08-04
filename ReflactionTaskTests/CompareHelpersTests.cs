@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using ReflectionTask;
 using System;
-using System.Collections.Generic;
 
 namespace ReflactionTaskTests
 {

@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0BB56051
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflactionTaskTests", "ReflactionTaskTests\ReflactionTaskTests.csproj", "{9AEC5FBF-3783-4F74-A6C5-02564F9DD684}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CachTask", "CachTask\CachTask.csproj", "{CAD9C577-4533-4025-8FB8-A8D85B74F81B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsolePLCachTask", "ConsolePLCachTask\ConsolePLCachTask.csproj", "{EC7ABD02-43F7-4DD1-902C-8F742502B048}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,14 @@ Global
 		{9AEC5FBF-3783-4F74-A6C5-02564F9DD684}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AEC5FBF-3783-4F74-A6C5-02564F9DD684}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AEC5FBF-3783-4F74-A6C5-02564F9DD684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD9C577-4533-4025-8FB8-A8D85B74F81B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD9C577-4533-4025-8FB8-A8D85B74F81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD9C577-4533-4025-8FB8-A8D85B74F81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD9C577-4533-4025-8FB8-A8D85B74F81B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC7ABD02-43F7-4DD1-902C-8F742502B048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC7ABD02-43F7-4DD1-902C-8F742502B048}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC7ABD02-43F7-4DD1-902C-8F742502B048}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC7ABD02-43F7-4DD1-902C-8F742502B048}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
