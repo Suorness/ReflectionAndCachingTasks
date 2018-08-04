@@ -1,29 +1,17 @@
 ﻿using NUnit.Framework;
 using ReflectionTask;
+using System;
+using System.Collections.Generic;
 
 namespace ReflactionTaskTests
 {
+    /// <summary>
+    /// Attention, this class demonstrates the work of the class <see cref="CompareHelper"/>.
+    /// These methods are not tests.
+    /// </summary>
     [TestFixture]
     public class CompareHelpersTests
     {
-        private Product productA;
-
-        public CompareHelpersTests()
-        {
-
-        }
-
-        [Test]
-        public void StartTest()
-        {
-            object objA = 7;
-            object objB = 7;
-
-            var result = CompareHelper.Compare(objA, objB);
-
-            Assert.AreEqual(true, result);
-        }
-
         [Test]
         public void CompareNull_Test()
         {
@@ -169,15 +157,110 @@ namespace ReflactionTaskTests
         {
             var listA = new CustomList()
             {
-                Array = new int[] { 1, 2 }
+                Array = new Category[1]
+            };
+
+            listA.Array[0] = new Category()
+            {
+                Id = 1,
+                Name = "Name"
             };
 
             var listB = new CustomList()
             {
-                Array = new int[] { 1, 3 }
+                Array = new Category[1]
+            };
+            listB.Array[0] = new Category()
+            {
+                Id = 1,
+                Name = "Name"
             };
 
             var result = CompareHelper.Compare(listA, listB);
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void Compare_WithAllMember()
+        {
+            var time = DateTime.Now;
+            var c = new C()
+            {
+                Id = 100
+            };
+
+            var product = new Product()
+            {
+                Id = 1,
+                Name = "Name",
+                Category = new Category()
+                {
+                    Id = 1,
+                    Name = "CategoryName"
+                },
+                Company = new Company()
+                {
+                    Id = 1
+                }
+            };
+
+
+            var categoryArray = new Category[1];
+            categoryArray[0] = new Category()
+            {
+                Id = 1,
+                Name = "Name"
+            };
+
+            var compereA = new CompererExampleClass()
+            {
+                Id = 1,
+                CProperty = c,
+                Product = product,
+                Array = categoryArray,
+                DateTime = time,
+                IntArray = new int[] { 1, 2 }
+            };
+
+            var compereB = new CompererExampleClass()
+            {
+                Id = 1,
+                CProperty = c,
+                Product = product,
+                Array = categoryArray,
+                DateTime = time,
+                IntArray = new int[] { 1, 2 }
+            };
+
+            var result = CompareHelper.Compare(compereA, compereB);
+            Assert.AreEqual(true, result);
+
+            //Change each field.
+            compereA.Id = 2;
+            result = CompareHelper.Compare(compereA, compereB);
+            Assert.AreEqual(false, result);
+
+            compereB.Id = 2;
+            compereA.CProperty = new C()
+            {
+                Id = 101
+            };
+            result = CompareHelper.Compare(compereA, compereB);
+            Assert.AreEqual(false, result);
+
+            compereA.CProperty = c;
+            compereA.DateTime = DateTime.Now;
+            result = CompareHelper.Compare(compereA, compereB);
+            Assert.AreEqual(false, result);
+
+            compereA.DateTime = time;
+            compereA.Product = new Product();
+            result = CompareHelper.Compare(compereA, compereB);
+            Assert.AreEqual(false, result);
+
+            compereA.Product = product;
+            compereA.IntArray = new int[] { 1, 4 };
+            result = CompareHelper.Compare(compereA, compereB);
             Assert.AreEqual(false, result);
         }
     }
@@ -222,6 +305,21 @@ namespace ReflactionTaskTests
 
     internal class CustomList
     {
-        public int[] Array { get; set; }
+        public Category[] Array { get; set; }
+    }
+
+    internal class CompererExampleClass
+    {
+        public int Id { get; set; }
+
+        public DateTime DateTime { get; set; }
+
+        public C CProperty { get; set; }
+
+        public Product Product { get; set; }
+
+        public Category[] Array { get; set; }
+
+        public int[] IntArray { get; set; }
     }
 }
