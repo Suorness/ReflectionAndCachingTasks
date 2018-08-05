@@ -1,14 +1,17 @@
-﻿using System.Runtime.Serialization;
+﻿using CachTask;
 
-namespace ConsolePLCachTask
+namespace CachTaskTests
 {
-    [DataContract]
+    [Cach(hour: 0, min: 0, sec: 2)]
     public class Person
     {
-        [DataMember]
         public string Name { get; set; }
-        [DataMember]
+
         public int Age { get; set; }
+
+        public Person()
+        {
+        }
 
         public Person(string name, int year)
         {
